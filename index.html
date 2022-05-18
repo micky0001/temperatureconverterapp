@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body style="background-color: black;color:white">
+    <h1 style="text-align: center;">Temperature Converter</h1>
+    <div style="margin-left: auto; width:250px;margin-right:auto">
+        <input type="number" name="" id="value">
+    <select name="" id="select">
+        <option value="Farenheit">Options</option>
+        <option value="Farenheit">Farenheit</option>
+        <option value="Celcius">Celcius</option>
+    </select>
+    <button id="cl">Submit</button>
+    <span id="result"></span>
+    </div>
+</body>
+
+<script>
+  const res = document.getElementById('result');
+  function show()
+  {
+    const select = document.getElementById('select').value;
+  const data = document.getElementById("value").value;
+  if(select === "Farenheit")
+  {
+   const Fahrenheit = (data * 1.8) + 32;
+    console.log(Fahrenheit);
+    res.innerHTML=`<h1>Farenheit = ${Fahrenheit}</h1>`;
+  }
+  else if(select === "Celcius")
+  {
+   const Celsius  = (data - 32) / 1.8;
+   console.log(Celsius);
+   res.innerHTML=`<h1>Celcius = ${Celsius}</h1>`;
+
+  }
+  }
+ const sub = document.getElementById("cl");
+ sub.addEventListener('click',show);
+</script>
+</html>
